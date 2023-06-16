@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@jojoxd/mouse-event-emitter": "^1.0.0"
+  }
+}
