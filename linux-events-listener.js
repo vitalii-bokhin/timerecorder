@@ -37,6 +37,6 @@ class DeviceEvent {
 }
 
 new DeviceEvent('keyboard', '/dev/input/by-path/platform-i8042-serio-0-event-kbd');
-new DeviceEvent('mouse', '/dev/input/mice');
+// new DeviceEvent('mouse', '/dev/input/mice');
 
 module.exports = eventEmiter;
