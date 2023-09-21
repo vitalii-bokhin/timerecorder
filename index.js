@@ -12,6 +12,7 @@ const startTime = Date.now();
 
 let lastTime = startTime;
 
+rl.prompt();
 rl.on('line', commands);
 
 linuxEvent.on('action', () => {
@@ -102,6 +103,8 @@ function commands(req) {
             console.log('Downtime: ' + (lastLog.downtime / 1000 / 60 / 60).toFixed(5) + ' hours');
             console.log('Abs. working time: ' + (workingSeconds / 60 / 60).toFixed(5) + ' hours');
             console.log('Abs. working time from 8h: ' + workingPercents.toFixed(5) + ' %');
+
+            rl.prompt();
         });
 
     } else if (req.includes('new')) {
@@ -113,11 +116,18 @@ function commands(req) {
 
         logTime({ startTime: Date.now(), title }, (logData) => {
             console.log(logData.slice(-1));
+
+            rl.prompt();
         });
 
     } else if (req.includes('=')) {
         logTime({ title: req.split('=')[1] }, (logData) => {
             console.log(logData.slice(-1));
+
+            rl.prompt();
         });
+    } else {
+        console.error('timerecorder: command not found: ' + req);
+        rl.prompt();
     }
 }
