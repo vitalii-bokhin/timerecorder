@@ -1,8 +1,5 @@
 {
-  "dependencies": {
-    "@jojoxd/mouse-event-emitter": "^1.0.0"
-  },
   "scripts": {
-    "start": "sudo node index.js"
+    "start": "node index.js"
   }
 }
